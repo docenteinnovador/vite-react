@@ -2,7 +2,11 @@ import React from 'react';
 import '@google/model-viewer/lib/model-viewer';
 import { FaTiktok, FaYoutube, FaWhatsapp } from "react-icons/fa";
 // Importa el modelo 3D desde la carpeta assets
-import modelPath from '../assets/tripo_pbr_model_c56b51c5-9fdf-443c-a928-ce97bb31691b.glb';
+
+const modelPath = new URL('../models/tripo_pbr_model_c56b51c5-9fdf-443c-a928-ce97bb31691b.glb', import.meta.url).href;
+
+
+
 
 
 const MainContent: React.FC = () => {
