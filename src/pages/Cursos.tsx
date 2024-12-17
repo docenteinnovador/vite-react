@@ -13,23 +13,23 @@ const CourseCard: React.FC<{
   };
 
   return (
-    <div className="flex flex-col items-center bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-all">
-      <div className="w-24 h-24 bg-blue-200 rounded-full flex items-center justify-center mb-4">
-        <img src={imgSrc} alt={title} className="w-16 h-16 object-cover" />
+    <div className="flex flex-col items-center p-8 transition-all bg-white rounded-lg shadow-lg hover:shadow-2xl">
+      <div className="flex items-center justify-center w-24 h-24 mb-4 bg-blue-200 rounded-full">
+        <img src={imgSrc} alt={title} className="object-cover w-16 h-16" />
       </div>
-      <h2 className="text-xl font-semibold text-blue-800 mb-4">{title}</h2>
-      <p className="text-center text-gray-600 mb-4">{description}</p>
+      <h2 className="mb-4 text-xl font-semibold text-blue-800">{title}</h2>
+      <p className="mb-4 text-center text-gray-600">{description}</p>
       <button
         onClick={toggleVisibility}
-        className="text-blue-600 hover:text-blue-800 font-medium"
+        className="font-medium text-blue-600 hover:text-blue-800"
       >
         {isVisible ? "Ver menos" : "Ver más"}
       </button>
 
-      {/* Contenido adicional */}
+     
       {isVisible && (
         <div className="mt-4 text-gray-700">
-          <ul className="list-disc pl-6">
+          <ul className="pl-6 list-disc">
             <li>{additionalInfo}</li>
           </ul>
         </div>
@@ -45,7 +45,7 @@ const Cursos: React.FC = () => {
         DEJA QUE TUS NUEVAS IDEAS TE INSPIREN A CREAR.
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 px-4">
+      <div className="grid grid-cols-1 gap-12 px-4 md:grid-cols-2 lg:grid-cols-3">
         <CourseCard
           title="DOCENTE DE REFUERZO ACADÉMICO"
           description="Refuerza las competencias de los estudiantes en diversas materias."

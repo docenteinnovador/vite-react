@@ -16,7 +16,7 @@ function App() {
 
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/vite-react">
       <Navbar />
       
 

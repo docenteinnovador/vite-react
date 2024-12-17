@@ -19,4 +19,4 @@ declare global {
     'field-of-view'?: string
   }
   
-  export {}  // Necesario para que TypeScript trate esto como un módulo
+  export {}  
