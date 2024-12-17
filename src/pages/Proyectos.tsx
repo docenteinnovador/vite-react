@@ -1,5 +1,15 @@
 import React, { useRef } from "react";
 
+// Importa las imágenes
+import captura2 from "../assets/captura_2.png";
+import captura1 from "../assets/captura_1.png";
+import captura8 from "../assets/captura_8.png";
+import captura10 from "../assets/captura_10.png";
+import captura9 from "../assets/captura_9.png";
+import captura6 from "../assets/captura_6.png";
+import captura5 from "../assets/captura_5.png";
+import captura7 from "../assets/captura_7.png";
+
 const Proyectos: React.FC = () => {
     const carouselRef = useRef<HTMLDivElement>(null);
 
@@ -15,16 +25,16 @@ const Proyectos: React.FC = () => {
         }
     };
 
-    // Array de proyectos para hacer el código más mantenible
+    // Array de proyectos con imágenes importadas
     const proyectos = [
-        { img: "captura_2.png", titulo: "Vocaliza y Aprende" },
-        { img: "captura_1.png", titulo: "Pizarra Digital" },
-        { img: "captura_8.png", titulo: "Raton Tactil" },
-        { img: "captura_10.png", titulo: "Planificador de clase con IA" },
-        { img: "captura_9.png", titulo: "Decodificación con IA - Sistema Braille" },
-        { img: "captura_6.png", titulo: "Pingüi en 2D" },
-        { img: "captura_5.png", titulo: "VIDEOJUEGO DE MARIO, A VOZ" },
-        { img: "captura_7.png", titulo: "Pomodoro Digital" }
+        { img: captura2, titulo: "Vocaliza y Aprende" },
+        { img: captura1, titulo: "Pizarra Digital" },
+        { img: captura8, titulo: "Raton Tactil" },
+        { img: captura10, titulo: "Planificador de clase con IA" },
+        { img: captura9, titulo: "Decodificación con IA - Sistema Braille" },
+        { img: captura6, titulo: "Pingüi en 2D" },
+        { img: captura5, titulo: "VIDEOJUEGO DE MARIO, A VOZ" },
+        { img: captura7, titulo: "Pomodoro Digital" }
     ];
 
     return (
@@ -57,7 +67,7 @@ const Proyectos: React.FC = () => {
                 {proyectos.map((proyecto, index) => (
                     <div key={index} className="flex-shrink-0 overflow-hidden rounded-lg shadow-lg w-80 bg-gray-50">
                         <img
-                            src={`${import.meta.env.BASE_URL}models3d/${proyecto.img}`}
+                            src={proyecto.img}
                             alt={proyecto.titulo}
                             className="object-cover w-full h-48"
                         />
