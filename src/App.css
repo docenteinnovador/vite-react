@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+    @font-face {
+        font-family: 'montserratMedium';
+        font-style: normal;
+        src: local('Montserrat Regular'), local('Montserrat-Regular'), url('assets/fonts/Montserrat-Medium.ttf');
+
+      }
+
+
+      @font-face {
+        font-family: 'montserratRegular';
+        font-style: normal;
+        src: local('Montserrat Regular'), local('Montserrat-Regular'), url('assets/fonts/Montserrat-Regular.ttf');
+
+      }
