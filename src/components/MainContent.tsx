@@ -7,14 +7,14 @@ const modelPath = '/models3d/tripo_pbr_model_c56b51c5-9fdf-443c-a928-ce97bb31691
 
 const MainContent: React.FC = () => {
   return (
-    <div className="w-screen h-screen flex flex-col md:flex-row items-center justify-between px-10">
+    <div className="flex flex-col items-center justify-between w-screen h-screen px-10 md:flex-row">
       {/* Sección de la izquierda con texto */}
-      <div className="w-full md:w-1/2 text-center md:text-left mt-8 md:mt-0">
-        <h1 className="text-4xl md:text-5xl font-bold text-blue-900">CODEROBOTICS</h1>
-        <p className="mt-4 text-base md:text-lg text-gray-700">
+      <div className="w-full mt-8 text-center md:w-1/2 md:text-left md:mt-0">
+        <h1 className="text-4xl font-bold text-blue-900 md:text-5xl">CAJA DE SORPRESA</h1>
+        <p className="mt-4 text-base text-gray-700 md:text-lg">
           Bienvenidos, a mi empresa de Tecnología Enseñanza y Aprendizaje
         </p>
-        <div className="flex gap-4 justify-center md:justify-start mt-6">
+        <div className="flex justify-center gap-4 mt-6 md:justify-start">
           {/* TikTok Icon */}
           <a href="https://www.tiktok.com/@coderoboticsii" className="text-2xl text-blue-600 hover:text-blue-600">
             <FaTiktok className="text-4xl hover:text-blue-500" />
@@ -32,14 +32,14 @@ const MainContent: React.FC = () => {
         </div>
         <button
           onClick={() => window.open("https://www.appsheet.com/start/c35e6674-ba92-437a-ac41-ee3c69a59e42#view=CODEROBOTICS", "_blank")}
-          className="mt-6 bg-blue-900 hover:bg-blue-700 text-white py-2 px-6 rounded"
+          className="px-6 py-2 mt-6 text-white bg-blue-900 rounded hover:bg-blue-700"
         >
           CONTRATAR DOCENTE
         </button>
       </div>
 
       {/* Sección de la derecha con modelo 3D */}
-      <div className="w-full md:w-1/2 flex justify-center items-center h-full mt-8 md:mt-0">
+      <div className="flex items-center justify-center w-full h-full mt-8 md:w-1/2 md:mt-0">
         <model-viewer
           className="w-full h-full"
           src={modelPath} // URL directa al modelo 3D
