@@ -10,7 +10,7 @@ const MainContent: React.FC = () => {
     <div className="flex flex-col items-center justify-between w-screen h-screen px-10 md:flex-row">
       {/* Sección de la izquierda con texto */}
       <div className="w-full mt-8 text-center md:w-1/2 md:text-left md:mt-0">
-        <h1 className="text-4xl font-bold text-blue-900 md:text-5xl">CAJA DE SORPRESA</h1>
+        <h1 className="text-4xl font-bold text-blue-900 md:text-5xl">CODEROBOTICS/h1>
         <p className="mt-4 text-base text-gray-700 md:text-lg">
           Bienvenidos, a mi empresa de Tecnología Enseñanza y Aprendizaje
         </p>
