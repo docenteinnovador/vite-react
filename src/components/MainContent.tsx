@@ -1,9 +1,9 @@
 import React from 'react';
 import '@google/model-viewer/lib/model-viewer';
 import { FaTiktok, FaYoutube, FaWhatsapp } from "react-icons/fa";
+// Importa el modelo 3D desde la carpeta assets
+import modelPath from '../assets/tripo_pbr_model_c56b51c5-9fdf-443c-a928-ce97bb31691b.glb';
 
-// Ruta como URL desde la carpeta public
-const modelPath = '/models3d/tripo_pbr_model_c56b51c5-9fdf-443c-a928-ce97bb31691b.glb';
 
 const MainContent: React.FC = () => {
   return (
@@ -42,7 +42,7 @@ const MainContent: React.FC = () => {
       <div className="flex items-center justify-center w-full h-full mt-8 md:w-1/2 md:mt-0">
         <model-viewer
           className="w-full h-full"
-          src={modelPath} // URL directa al modelo 3D
+          src={modelPath} // Ahora el modelo se carga correctamente desde assets
           ar
           ar-modes="webxr scene-viewer quick-look"
           camera-controls
@@ -50,9 +50,9 @@ const MainContent: React.FC = () => {
           shadow-intensity="1"
           autoplay
           auto-rotate
-          camera-orbit="auto auto 5m" // Aumentamos la distancia inicial de la cámara
-          max-camera-orbit="auto auto 10m" // Limite de la distancia máxima de la cámara
-          min-camera-orbit="auto auto 2m" // Limite de la distancia mínima de la cámara
+          camera-orbit="auto auto 5m"
+          max-camera-orbit="auto auto 10m"
+          min-camera-orbit="auto auto 2m"
           field-of-view="45deg"
           style={{
             backgroundColor: 'transparent',
