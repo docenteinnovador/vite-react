@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 // Importa las imágenes
 import captura2 from "../assets/captura_2.png";
@@ -25,16 +25,19 @@ const Proyectos: React.FC = () => {
         }
     };
 
-    // Array de proyectos con imágenes importadas
+    
+    const [imagenActiva, setImagenActiva] = useState<number | null>(null);
+
+    
     const proyectos = [
-        { img: captura2, titulo: "Vocaliza y Aprende" },
-        { img: captura1, titulo: "Pizarra Digital" },
-        { img: captura8, titulo: "Raton Tactil" },
-        { img: captura10, titulo: "Planificador de clase con IA" },
-        { img: captura9, titulo: "Decodificación con IA - Sistema Braille" },
-        { img: captura6, titulo: "Pingüi en 2D" },
-        { img: captura5, titulo: "VIDEOJUEGO DE MARIO, A VOZ" },
-        { img: captura7, titulo: "Pomodoro Digital" }
+        { img: captura2, titulo: "Vocaliza y Aprende", descripcion: "Aplicación educativa para mejorar la pronunciación." },
+        { img: captura1, titulo: "Pizarra Digital", descripcion: "Herramienta interactiva para la enseñanza digital." },
+        { img: captura8, titulo: "Ratón Táctil", descripcion: "Sistema innovador de control táctil." },
+        { img: captura10, titulo: "Planificador de clase con IA", descripcion: "Planificación automatizada de clases con inteligencia artificial." },
+        { img: captura9, titulo: "Decodificación con IA - Sistema Braille", descripcion: "Traducción automática de textos a braille usando IA." },
+        { img: captura6, titulo: "Pingüi en 2D", descripcion: "Juego de aventuras en 2D con temática de pingüinos." },
+        { img: captura5, titulo: "VIDEOJUEGO DE MARIO, A VOZ", descripcion: "Videojuego interactivo controlado por voz." },
+        { img: captura7, titulo: "Pomodoro Digital", descripcion: "Aplicación para mejorar la productividad con el método Pomodoro." }
     ];
 
     return (
@@ -43,6 +46,7 @@ const Proyectos: React.FC = () => {
                 PROYECTOS REALIZADOS POR EL DOCENTE
             </h2>
 
+           
             <button
                 className="absolute z-10 p-3 text-white transform -translate-y-1/2 bg-blue-600 rounded-full shadow-lg left-4 top-1/2 hover:bg-blue-700"
                 onClick={scrollLeft}
@@ -56,6 +60,7 @@ const Proyectos: React.FC = () => {
                 ▶
             </button>
 
+          
             <div
                 ref={carouselRef}
                 className="flex p-4 space-x-8 overflow-x-auto rounded-lg"
@@ -65,15 +70,29 @@ const Proyectos: React.FC = () => {
                 }}
             >
                 {proyectos.map((proyecto, index) => (
-                    <div key={index} className="flex-shrink-0 overflow-hidden rounded-lg shadow-lg w-80 bg-gray-50">
+                    <div
+                        key={index}
+                        className="relative flex-shrink-0 overflow-hidden rounded-lg shadow-lg cursor-pointer w-80 bg-gray-50"
+                        onClick={() => setImagenActiva(index === imagenActiva ? null : index)} // Toggle activo/inactivo
+                    >
+                        
                         <img
                             src={proyecto.img}
                             alt={proyecto.titulo}
                             className="object-cover w-full h-48"
                         />
+
+                        
                         <div className="py-3 text-center text-white bg-gray-800">
                             <h3 className="text-lg font-bold">{proyecto.titulo}</h3>
                         </div>
+
+                       
+                        {imagenActiva === index && (
+                            <div className="w-full p-4 mt-2 text-center text-white bg-black rounded-md bg-opacity-70">
+                                <p className="text-sm">{proyecto.descripcion}</p>
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>
