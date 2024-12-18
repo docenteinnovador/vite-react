@@ -2,45 +2,43 @@ import React, { useState, useEffect } from 'react';
 import '@google/model-viewer/lib/model-viewer';
 import { FaTiktok, FaYoutube, FaWhatsapp } from "react-icons/fa";
 
-
 const modelPath = new URL('../models/tripo_pbr_model_c56b51c5-9fdf-443c-a928-ce97bb31691b.glb', import.meta.url).href;
 
 const MainContent: React.FC = () => {
-  const words = ["TECNOLOGIA", "APRENDIZAJE", "INNOVACION", "CONOCIMIENTO","CREATIVIDAD", "PROGRAMACION"]; 
-  const [currentText, setCurrentText] = useState(""); 
-  const [currentIndex, setCurrentIndex] = useState(0); 
-  const [isDeleting, setIsDeleting] = useState(false); 
+  const [currentText, setCurrentText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [showInstructions, setShowInstructions] = useState(false);
+
+  const words = ["TECNOLOGIA", "APRENDIZAJE", "INNOVACION", "CONOCIMIENTO", "CREATIVIDAD", "PROGRAMACION"];
 
   useEffect(() => {
     const currentWord = words[currentIndex];
-    const typingSpeed = isDeleting ? 50 : 100; 
-    const delay = isDeleting && currentText === "" ? 1000 : 2000; 
+    const typingSpeed = isDeleting ? 50 : 100;
+    const delay = isDeleting && currentText === "" ? 1000 : 2000;
 
     const handleTyping = () => {
       if (!isDeleting && currentText === currentWord) {
-      
         setTimeout(() => setIsDeleting(true), 1000);
       } else if (isDeleting && currentText === "") {
-        
         setIsDeleting(false);
-        setCurrentIndex((prev) => (prev + 1) % words.length); 
+        setCurrentIndex((prev) => (prev + 1) % words.length);
       } else {
-        
         const nextText = isDeleting
-          ? currentText.slice(0, -1) 
-          : currentWord.slice(0, currentText.length + 1); 
+          ? currentText.slice(0, -1)
+          : currentWord.slice(0, currentText.length + 1);
         setCurrentText(nextText);
       }
     };
 
     const timer = setTimeout(handleTyping, currentText === "" && isDeleting ? delay : typingSpeed);
 
-    return () => clearTimeout(timer); 
+    return () => clearTimeout(timer);
   }, [currentText, isDeleting, currentIndex]);
 
   return (
     <div className="flex flex-col items-center justify-between w-screen h-screen px-10 md:flex-row">
-      
+
       <div className="w-full mt-20 text-center md:w-1/2 md:text-left md:mt-0">
         <h1 className="text-4xl font-bold text-green-400 md:text-5xl">
           {currentText}
@@ -49,17 +47,15 @@ const MainContent: React.FC = () => {
           Bienvenidos, a mi empresa de Tecnología Enseñanza y Aprendizaje
         </p>
         <div className="flex justify-center gap-4 mt-6 md:justify-start">
-          
+
           <a href="https://www.tiktok.com/@coderoboticsii" className="text-2xl text-blue-600 hover:text-blue-600">
             <FaTiktok className="text-4xl hover:text-blue-500" />
           </a>
 
-          
           <a href="https://www.youtube.com/@CodeRoboticsII" className="text-2xl text-blue-600 hover:text-red-600">
             <FaYoutube className="text-4xl hover:text-red-500" />
           </a>
 
-         
           <a href="https://wa.me/0983036256" className="text-2xl text-blue-600 hover:text-green-600">
             <FaWhatsapp className="text-4xl hover:text-green-500" />
           </a>
@@ -70,13 +66,32 @@ const MainContent: React.FC = () => {
         >
           SOLICITAR DOCENTE
         </button>
+        <button
+          onClick={() => setShowInstructions(!showInstructions)}
+          className="px-6 py-2 mt-4 text-white bg-green-700 rounded hover:bg-green-500"
+        >
+          {showInstructions ? "OCULTAR INDICACIONES" : "MIRAR INDICACIONES"}
+        </button>
+        {showInstructions && (
+          <div className="p-4 mt-4 text-white bg-black rounded">
+            <p>Para solicitar un docente, por favor sigue las siguientes indicaciones:</p>
+            <ol className="mt-2 list-decimal list-inside">
+              <li>Pulsa el botón azul: <strong>Solicitar Docente</strong>.</li>
+              <li>Pulsa el botón verde con el símbolo <strong>+</strong>.</li>
+              <li>Completa todos los campos del formulario con la información requerida.</li>
+              <li>Pulsa en <strong>Save</strong> para guardar los datos.</li>
+              <li>Espera a que el docente se comunique contigo para asignar un horario de clases.</li>
+              <li>Solicita información adicional sobre las clases si lo necesitas.</li>
+            </ol>
+          </div>
+
+        )}
       </div>
 
-      
       <div className="flex items-center justify-center w-full h-full mt-8 md:w-1/2 md:mt-0">
         <model-viewer
           className="w-full h-full"
-          src={modelPath} 
+          src={modelPath}
           ar
           ar-modes="webxr scene-viewer quick-look"
           camera-controls
