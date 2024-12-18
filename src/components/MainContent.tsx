@@ -68,7 +68,7 @@ const MainContent: React.FC = () => {
           onClick={() => window.open("https://www.appsheet.com/start/c35e6674-ba92-437a-ac41-ee3c69a59e42#view=CODEROBOTICS", "_blank")}
           className="px-6 py-2 mt-6 text-white bg-blue-900 rounded hover:bg-blue-700"
         >
-          CONTRATAR DOCENTE
+          SOLICITAR DOCENTE
         </button>
       </div>
 
