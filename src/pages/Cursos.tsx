@@ -47,14 +47,14 @@ const Cursos: React.FC = () => {
 
       <div className="grid grid-cols-1 gap-12 px-4 md:grid-cols-2 lg:grid-cols-3">
         <CourseCard
-          title="CURSO DE REFUERZO ACADÉMICO"
+          title="DOCENTE DE REFUERZO ACADÉMICO"
           description="Refuerza las competencias de los estudiantes en diversas materias."
           imgSrc="https://i.gifer.com/RrVB.gif"
           additionalInfo="• Fortalece conocimientos en materias como Lenguaje, Ciencias Naturales, Estudios Sociales, Matemáticas, etc.
 • Retroalimentación de tareas estudiantiles."
         />
         <CourseCard
-          title="CURSO DE EDUCACIÓN ESPECIAL"
+          title="DOCENTE DE EDUCACIÓN ESPECIAL"
           description="Ayuda a estudiantes con necesidades especiales a desarrollar habilidades."
           imgSrc="https://static.wixstatic.com/media/a0a89f_8ace1ce6e0b54b66802b90d393a55f03~mv2.jpg/v1/fill/w_640,h_468,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/a0a89f_8ace1ce6e0b54b66802b90d393a55f03~mv2.jpg"
           additionalInfo="• Clases personalizadas según la discapacidad del estudiante
@@ -64,35 +64,35 @@ const Cursos: React.FC = () => {
 • Retroalimentación de tareas estudiantiles"
         />
         <CourseCard
-          title="CURSO DE PROGRAMACIÓN"
+          title="DOCENTE DE PROGRAMACIÓN"
           description="Enseña la lógica de programación y desarrollo de software."
           imgSrc="https://i.gifer.com/bJk.gif"
           additionalInfo="• Aprende la lógica de programación en lenguajes como Python, GDScript, y más.
 • Desarrollo de proyectos prácticos de programación."
         />
         <CourseCard
-          title="CURSO DE CREACIÓN DE JUEGOS EDUCATIVOS"
+          title="DOCENTE DE CREACIÓN DE JUEGOS EDUCATIVOS"
           description="Diseña videojuegos educativos para el aprendizaje interactivo."
           imgSrc="https://i.gifer.com/2Xxe.gif"
           additionalInfo="• Crea videojuegos en lenguajes como Python, Scratch, GDScript, Unity, Godot, entre otros.
 • Aprende a integrar elementos educativos en el diseño de juegos."
         />
         <CourseCard
-          title="CURSO DE INGLÉS"
+          title="DOCENTE DE INGLÉS"
           description="Aprende y enseña inglés desde cero con métodos efectivos."
           imgSrc="https://i.gifer.com/KyfI.gif"
           additionalInfo="• Aprende desde los fundamentos como 'verb to be', tiempos verbales básicos, y más.
 • Desarrolla habilidades de comprensión oral y escrita."
         />
         <CourseCard
-          title="CURSO DE CREACIÓN DE SITIOS WEB RESPONSIVOS"
+          title="DOCENTE DE CREACIÓN DE SITIOS WEB RESPONSIVOS"
           description="Crea sitios web adaptables a todos los dispositivos."
           imgSrc="https://i.gifer.com/CV4o.gif"
           additionalInfo="• Aprende a crear tu primera página web con HTML, CSS, y JavaScript.
 • Crea sitios web responsivos usando frameworks modernos."
         />
         <CourseCard
-          title="CURSO DE ROBÓTICA EDUCATIVA"
+          title="DOCENTE DE ROBÓTICA EDUCATIVA"
           description="Desarrolla habilidades en robótica y programación."
           imgSrc="https://i.gifer.com/UXUQ.gif"
           additionalInfo="• Crea tu propio robot desde cero con kits de robótica educativa.
