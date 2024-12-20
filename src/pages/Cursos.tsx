@@ -58,7 +58,7 @@ const Cursos: React.FC = () => {
 
       <div className="grid grid-cols-1 gap-12 px-4 md:grid-cols-2 lg:grid-cols-3">
         <CourseCard
-          title="CURSO DE REFUERZO ACADÉMICO"
+          title="DOCENTE DE REFUERZO ACADÉMICO"
           description="Refuerza las competencias de los estudiantes en diversas materias."
           imgSrc="https://i.gifer.com/RrVB.gif"
           additionalInfo="Fortalece conocimientos en Lenguaje, Ciencias Naturales, Matemáticas, y más."
