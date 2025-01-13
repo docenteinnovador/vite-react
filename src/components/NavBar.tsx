@@ -60,6 +60,7 @@ const Navbar: React.FC = () => {
       {isMenuOpen && (
         <div className="absolute top-20 right-0 w-full bg-[#33587d] text-white text-center py-4 md:hidden">
           {[{ name: "Proyectos", path: "/proyectos" },
+          { name: "Sobre mí", path: "/sobremi" },
           { name: "Cursos", path: "/cursos" },
           { name: "Servicios", path: "/servicios" },
           { name: "Contactos", path: "/contacto" },
