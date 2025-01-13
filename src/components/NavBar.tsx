@@ -29,6 +29,7 @@ const Navbar: React.FC = () => {
      
       <div className="hidden space-x-12 md:flex">
         {[{ name: "Proyectos", path: "/proyectos" },
+        { name: "Sobre mí", path: "/sobremi" },
         { name: "Cursos", path: "/cursos" },
         { name: "Servicios", path: "/servicios" },
         { name: "Contactos", path: "/contacto" },

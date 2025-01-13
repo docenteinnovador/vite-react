@@ -4,6 +4,7 @@ import Proyectos from "../Proyectos"
 import Cursos from "../Cursos"
 import Servicios from "../Servicios"  
 import Contacto from "../Contacto"  
+import Sobremi from "../sobremi"
 
 
 
@@ -16,6 +17,7 @@ const RouterConfig = () => {
       <Route path="/cursos" element={<Cursos />} />
       <Route path="/servicios" element={<Servicios />} />
       <Route path="/contacto" element={<Contacto />} />
+      <Route path="/sobremi" element={<Sobremi />} />
     
       
       
