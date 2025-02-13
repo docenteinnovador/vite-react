@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-const game: React.FC = () => {
+const juego: React.FC = () => {
   const crearPuntos = () => {
     const puntos = [];
     const densidad = 1.2; 
@@ -173,4 +173,4 @@ const StyledWrapper = styled.div`
   }
 `;
 
-export default game;
+export default juego;
