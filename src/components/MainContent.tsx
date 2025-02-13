@@ -10,7 +10,7 @@ const MainContent: React.FC = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [showInstructions, setShowInstructions] = useState(false);
 
-  const words = ["TECNOLOGIA", "APRENDIZAJE", "INNOVACION", "CONOCIMIENTO", "CREATIVIDAD", "PROGRAMACION"];
+  const words = ["LogopediaTech","TECNOLOGIA", "APRENDIZAJE", "INNOVACION", "CONOCIMIENTO", "CREATIVIDAD", "PROGRAMACION", ];
 
   useEffect(() => {
     const currentWord = words[currentIndex];

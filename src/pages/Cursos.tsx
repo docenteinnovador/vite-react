@@ -64,8 +64,8 @@ const Cursos: React.FC = () => {
           additionalInfo="Fortalece conocimientos en Lenguaje, Ciencias Naturales, Matemáticas, y más."
         />
         <CourseCard
-          title="DOCENTE DE EDUCACIÓN ESPECIAL"
-          description="Ayuda a estudiantes con necesidades especiales a desarrollar habilidades."
+          title="DOCENTE DE EDUCACIÓN ESPECIAL/ LOGOPEDIA"
+          description="Ayuda a estudiantes con necesidades especiales a desarrollar habilidades, lenguaje y comunicación."
           imgSrc="https://static.wixstatic.com/media/a0a89f_8ace1ce6e0b54b66802b90d393a55f03~mv2.jpg"
           additionalInfo="Clases personalizadas según la discapacidad del estudiante."
         />
