@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-
 import captura2 from "../assets/captura_2.png";
 import captura1 from "../assets/captura_1.png";
 import captura8 from "../assets/captura_8.png";
@@ -40,9 +39,10 @@ const Proyectos: React.FC = () => {
 
   return (
     <div className="relative w-full mx-auto mt-32 mb-16">
-      <h2 className="mb-8 text-4xl font-bold text-center text-blue-900">
-        PROYECTOS REALIZADOS POR EL DOCENTE
+      <h2 className="mb-8 text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 drop-shadow-lg">
+        PROYECTOS TECNOLÓGICOS
       </h2>
+
 
       <button
         className="absolute z-10 p-3 text-white transform -translate-y-1/2 bg-green-600 rounded-full shadow-lg left-4 top-1/2 hover:bg-blue-400"
@@ -60,10 +60,7 @@ const Proyectos: React.FC = () => {
       <div
         ref={carouselRef}
         className="flex p-4 space-x-8 overflow-x-auto rounded-lg"
-        style={{
-          scrollBehavior: "smooth",
-          scrollbarWidth: "none",
-        }}
+        style={{ scrollBehavior: "smooth", scrollbarWidth: "none" }}
       >
         {proyectos.map((proyecto, index) => (
           <motion.div
@@ -80,11 +77,9 @@ const Proyectos: React.FC = () => {
               className="object-cover w-full h-48"
               whileHover={{ scale: 1.05 }}
             />
-
             <div className="py-3 text-center text-white bg-gray-800">
               <h3 className="text-lg font-bold">{proyecto.titulo}</h3>
             </div>
-
             {imagenActiva === index && (
               <motion.div
                 className="w-full p-4 mt-2 text-center text-white bg-black rounded-md bg-opacity-70"

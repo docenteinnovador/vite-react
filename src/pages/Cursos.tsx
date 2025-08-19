@@ -9,7 +9,7 @@ interface CourseCardProps {
 }
 
 const CourseCard: React.FC<CourseCardProps> = ({ title, description, imgSrc, additionalInfo }) => {
-  const [isVisible, setIsVisible] = useState(false); 
+  const [isVisible, setIsVisible] = useState(false);
 
   const variants = {
     hidden: { opacity: 0, y: 50 },
@@ -48,15 +48,22 @@ const Cursos: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center py-16 mt-24 space-y-12">
       <motion.h1
-        className="text-4xl font-bold text-center text-gray-800"
-        initial={{ opacity: 0, y: -20 }}
+        className="text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 drop-shadow-lg"
+        initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         DEJA QUE TUS NUEVAS IDEAS TE INSPIREN A CREAR.
       </motion.h1>
 
+
       <div className="grid grid-cols-1 gap-12 px-4 md:grid-cols-2 lg:grid-cols-3">
+        <CourseCard
+          title="DOCENTE DE MOLDEO"
+          description="Aprende a moldear figuras, crear diseños y desarrollar habilidades manuales."
+          imgSrc="https://i.gifer.com/ObzJ.gif"
+          additionalInfo="Fortalece tu creatividad y habilidades manuales con técnicas adecuadas."
+        />
         <CourseCard
           title="DOCENTE DE REFUERZO ACADÉMICO"
           description="Refuerza las competencias de los estudiantes en diversas materias."

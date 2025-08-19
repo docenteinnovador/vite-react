@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import '@google/model-viewer/lib/model-viewer';
 import { FaTiktok, FaYoutube, FaWhatsapp } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const modelPath = new URL('../models/tripo_pbr_model_c56b51c5-9fdf-443c-a928-ce97bb31691b.glb', import.meta.url).href;
 
@@ -9,8 +11,9 @@ const MainContent: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [showInstructions, setShowInstructions] = useState(false);
+  const navigate = useNavigate();
 
-  const words = ["LogopediaTech","TECNOLOGIA", "APRENDIZAJE", "INNOVACION", "CONOCIMIENTO", "CREATIVIDAD", "PROGRAMACION", ];
+  const words = ["LogopediaTech", "TECNOLOGIA", "APRENDIZAJE", "INNOVACION", "CONOCIMIENTO", "CREATIVIDAD", "PROGRAMACION"];
 
   useEffect(() => {
     const currentWord = words[currentIndex];
@@ -32,46 +35,62 @@ const MainContent: React.FC = () => {
     };
 
     const timer = setTimeout(handleTyping, currentText === "" && isDeleting ? delay : typingSpeed);
-
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, currentIndex]);
 
   return (
-    <div className="flex flex-col items-center justify-between w-screen h-screen px-10 md:flex-row">
+    <div className="relative flex flex-col items-center justify-between w-screen h-screen px-10 pt-14 md:flex-row md:pt-4">
 
-      <div className="w-full mt-20 text-center md:w-1/2 md:text-left md:mt-0">
-        <h1 className="text-4xl font-bold text-green-400 md:text-5xl">
-          {currentText}
-        </h1>
-        <p className="mt-4 text-base text-gray-700 md:text-lg">
-          Bienvenidos, a mi empresa de Tecnología Enseñanza y Aprendizaje
-        </p>
+      {/* Bloque de texto */}
+      <div className="w-full text-center md:w-1/2 md:text-left">
+        <div className="mt-16 md:mt-24">
+          <h1 className="text-4xl font-bold text-green-400 md:text-5xl">
+            {currentText}
+          </h1>
+          <p className="mt-4 text-sm font-medium leading-snug text-center text-gray-500 md:text-left">
+            Bienvenidos a <span className="font-bold text-gray-500">Coderobotics</span>, tu espacio de
+            <span className="font-semibold text-gray-500"> Tecnología</span>,
+            <span className="font-semibold text-gray-500"> Enseñanza</span> y
+            <span className="font-semibold text-gray-500"> Aprendizaje</span>.
+          </p>
+        </div>
+
+        {/* Redes sociales */}
         <div className="flex justify-center gap-4 mt-6 md:justify-start">
-
-          <a href="https://www.tiktok.com/@coderoboticsii" className="text-2xl text-blue-600 hover:text-blue-600">
-            <FaTiktok className="text-4xl hover:text-blue-500" />
+          <a href="https://www.tiktok.com/@coderoboticsii" className="text-2xl text-blue-600 hover:text-blue-500">
+            <FaTiktok className="text-4xl" />
           </a>
-
           <a href="https://www.youtube.com/@CodeRoboticsII" className="text-2xl text-blue-600 hover:text-red-600">
-            <FaYoutube className="text-4xl hover:text-red-500" />
+            <FaYoutube className="text-4xl" />
           </a>
-
           <a href="https://wa.me/0983036256" className="text-2xl text-blue-600 hover:text-green-600">
-            <FaWhatsapp className="text-4xl hover:text-green-500" />
+            <FaWhatsapp className="text-4xl" />
           </a>
         </div>
-        <button
-          onClick={() => window.open("https://www.appsheet.com/start/c35e6674-ba92-437a-ac41-ee3c69a59e42#view=CODEROBOTICS", "_blank")}
-          className="px-6 py-2 mt-6 text-white bg-blue-900 rounded hover:bg-blue-700"
-        >
-          SOLICITAR DOCENTE
-        </button>
-        <button
-          onClick={() => setShowInstructions(!showInstructions)}
-          className="px-6 py-2 mt-4 text-white bg-green-700 rounded hover:bg-green-500"
-        >
-          {showInstructions ? "OCULTAR INDICACIONES" : "MIRAR INDICACIONES"}
-        </button>
+
+        {/* Botones */}
+        <div className="flex items-center gap-2 mt-6">
+          <button
+            onClick={() => setShowInstructions(!showInstructions)}
+            className="p-2 text-white transition-all bg-green-400 rounded-full hover:bg-green-500"
+          >
+            {showInstructions ? <FaEyeSlash className="text-lg" /> : <FaEye className="text-lg" />}
+          </button>
+
+          <button
+            onClick={() =>
+              window.open(
+                "https://www.appsheet.com/start/c35e6674-ba92-437a-ac41-ee3c69a59e42#view=CODEROBOTICS",
+                "_blank"
+              )
+            }
+            className="px-4 py-4 text-sm font-semibold text-white transition-colors duration-300 bg-green-400 rounded-lg shadow hover:bg-blue-700"
+          >
+            SOLICITAR DOCENTE
+          </button>
+        </div>
+
+        {/* Instrucciones */}
         {showInstructions && (
           <div className="p-4 mt-4 text-white bg-black rounded">
             <p>Para solicitar un docente, por favor sigue las siguientes indicaciones:</p>
@@ -84,10 +103,10 @@ const MainContent: React.FC = () => {
               <li>Solicita información adicional sobre las clases si lo necesitas.</li>
             </ol>
           </div>
-
         )}
       </div>
 
+      {/* Modelo 3D */}
       <div className="flex items-center justify-center w-full h-full mt-8 md:w-1/2 md:mt-0">
         <model-viewer
           className="w-full h-full"
@@ -111,9 +130,17 @@ const MainContent: React.FC = () => {
             maxHeight: '100%',
             objectFit: 'contain',
           }}
-        >
-        </model-viewer>
+        />
       </div>
+
+      {/* Botón flotante permanente ZONA DE MOLDEADO */}
+      <button
+        onClick={() => navigate("/moldea")}
+        className="fixed z-50 px-5 py-2 text-base font-extrabold text-white transition-all duration-300 rounded-full shadow-xl bottom-6 right-6 bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:scale-105 hover:from-yellow-600 hover:via-yellow-700 hover:to-yellow-800 md:px-6 md:py-3 md:text-lg"
+      >
+        ZONA DE MOLDEADO
+      </button>
+
     </div>
   );
 };
